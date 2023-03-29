@@ -32,7 +32,6 @@ namespace PokemonReviewApp.Controllers
         }
 
         [HttpGet("{pokemId}")]
-
         public IActionResult GetPokemons(int pokemId)
         {
             if (!_pokemonRepository.PokemonExists(pokemId))
@@ -45,10 +44,9 @@ namespace PokemonReviewApp.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             return Ok(pokemon);
-
         }
-        [HttpGet("{pokeId}/rating")]
 
+        [HttpGet("{pokeId}/rating")]
         public IActionResult GetPokemonRating(int pokeId)
         {
             if (!_pokemonRepository.PokemonExists(pokeId))
